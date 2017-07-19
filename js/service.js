@@ -34,5 +34,19 @@
         }
 
        
+        //控制清除任务按钮的展示和隐藏
+        this.delCompleted = function(){
+            var arr = todoList.filter(function(item){
+                return !item.complete;
+            })
+            todoList.length = 0;
+            [].push.apply(todoList,arr);
+            that.save()
+        }
+        this.isShow = function(){
+            return todoList.some(function(item){
+                return item.complete;
+            })
+        }
     }])
 })(angular)

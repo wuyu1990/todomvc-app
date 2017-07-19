@@ -38,6 +38,13 @@
         vm.editSave = function(){
           vm.edited = -1;
         }
+
+        //控制清除任务按钮的展示和隐藏
+        vm.delCompleted = TodeSri.delCompleted;
+        vm.isShow = TodeSri.isShow;
+
+        // 显示未完成的任务数量
+        
     }
 
 })(angular)
