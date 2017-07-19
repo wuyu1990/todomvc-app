@@ -18,6 +18,17 @@
 
         // 02 删除数据
         vm.del = TodeSri.del;
+
+        //03全选
+        vm.isCheckedAll = false;
+        vm.checkAll = function(){
+            TodeSri.checkAll(vm.isCheckedAll);
+        }
+        vm.$watch("todoList",function(){
+          vm.faLen = $filter("filter")(todoList,{complete : false}).length;
+          vm.isCheckedAll = !vm.faLen;
+          TodeSri.save()
+        },true)
     }
 
 })(angular)

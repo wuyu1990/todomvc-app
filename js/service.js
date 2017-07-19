@@ -24,5 +24,13 @@
             todoList.splice(index,1);
             that.save()
         }
+
+        //03全选
+        this.checkAll = function(isChecked){
+            todoList.forEach(function(item) {
+                item.complete = isChecked;
+            });
+            that.save()
+        }
     }])
 })(angular)
