@@ -15,6 +15,9 @@
           TodeSri.add(vm.tackName);
            vm.tackName = "";
         }
+
+        // 02 删除数据
+        vm.del = TodeSri.del;
     }
 
 })(angular)

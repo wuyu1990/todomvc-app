@@ -5,6 +5,7 @@
 
         var localStrage = $window.localStorage;
         var todoList = JSON.parse(localStrage.getItem("todo")) || [];
+        var that = this;
         this.getData = function(){
             return todoList;
         }
@@ -16,6 +17,12 @@
         this.add = function(tackName){
             todoList.push({name : tackName, complete : false});
             this.save()
+        }
+
+        // 02 删除数据
+        this.del = function(index){
+            todoList.splice(index,1);
+            that.save()
         }
     }])
 })(angular)
