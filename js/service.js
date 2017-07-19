@@ -9,7 +9,13 @@
             return todoList;
         }
         this.save = function(){
-            localStorage.setItem(JSON.stringify(todoList));
+            localStorage.setItem("todo",JSON.stringify(todoList));
+        }
+
+        // 01 添加数据
+        this.add = function(tackName){
+            todoList.push({name : tackName, complete : false});
+            this.save()
         }
     }])
 })(angular)
