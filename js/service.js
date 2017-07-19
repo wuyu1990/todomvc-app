@@ -48,5 +48,16 @@
                 return item.complete;
             })
         }
+
+         // 显示未完成的任务数量
+        this.getCount = function(){
+            var count = 0;
+            todoList.forEach(function(item){
+                if(!item.complete){
+                    count++;
+                }
+            })
+            return count;
+        }
     }])
 })(angular)

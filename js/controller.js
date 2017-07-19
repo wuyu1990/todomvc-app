@@ -44,7 +44,7 @@
         vm.isShow = TodeSri.isShow;
 
         // 显示未完成的任务数量
-        
+        vm.getCount = TodeSri.getCount;
     }
 
 })(angular)
