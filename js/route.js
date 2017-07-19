@@ -1,10 +1,17 @@
 (function(angular){
     "use strict";
     angular.module("TodeApp.route",["ngRoute"])
-    .config("$routeProvider",function($routeProvider){
+    .config(['$routeProvider', function ($routeProvider) {
+        var routeConfig = {
+			controller: 'TodeCtri',
+			templateUrl: './index.html'
+		};
         $routeProvider
-            .when("/completed",{
-                controller : 
-            })
-    })
+			.when('/', routeConfig)
+			.when('/:status', routeConfig)
+			.otherwise({
+				redirectTo: '/'
+			});
+    }])
+   
 })(angular)
