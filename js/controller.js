@@ -29,6 +29,15 @@
           vm.isCheckedAll = !vm.faLen;
           TodeSri.save()
         },true)
+
+        // 04修改文本
+        vm.edited = -1;
+        vm.edit = function(index){
+          vm.edited = index;
+        }
+        vm.editSave = function(){
+          vm.edited = -1;
+        }
     }
 
 })(angular)
